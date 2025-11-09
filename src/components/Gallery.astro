@@ -1,0 +1,145 @@
+---
+import Icons from './Icons.astro';
+
+const galleryItems = [
+  {
+    id: 1,
+    title: 'Reparación de Lavadora Samsung',
+    description: 'Reparación completa de sistema de lavado y centrifugado',
+    category: 'Reparación',
+    rating: 5,
+    time: '2 horas',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+    gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+  },
+  {
+    id: 2,
+    title: 'Mantenimiento Preventivo LG',
+    description: 'Limpieza profunda y lubricación de componentes',
+    category: 'Mantenimiento',
+    rating: 5,
+    time: '1.5 horas',
+    image: 'https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=800&q=80',
+    gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+  },
+  {
+    id: 3,
+    title: 'Cambio de Repuestos Whirlpool',
+    description: 'Reemplazo de bomba de agua y válvulas',
+    category: 'Repuestos',
+    rating: 5,
+    time: '3 horas',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+    gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)'
+  },
+  {
+    id: 4,
+    title: 'Diagnóstico Electrónico Mabe',
+    description: 'Análisis completo de tarjeta electrónica',
+    category: 'Diagnóstico',
+    rating: 5,
+    time: '1 hora',
+    image: 'https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=800&q=80',
+    gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
+  },
+  {
+    id: 5,
+    title: 'Instalación Nueva Electrolux',
+    description: 'Instalación profesional con pruebas completas',
+    category: 'Instalación',
+    rating: 5,
+    time: '2 horas',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+    gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
+  },
+  {
+    id: 6,
+    title: 'Instalación Nueva Lavadora',
+    description: 'Instalación y configuración de nueva unidad',
+    category: 'Instalación',
+    rating: 5,
+    time: '2.5 horas',
+    image: 'https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=800&q=80',
+    gradient: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)'
+  }
+];
+---
+
+<section id="galeria" class="relative overflow-hidden" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); padding: clamp(3rem, 6vw, 6rem) 1rem;">
+  <!-- Efectos de fondo espectaculares -->
+  <div class="absolute inset-0 z-1">
+    <!-- Gradientes animados -->
+    <div class="absolute inset-0 animate-pulse-slow" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 50%, rgba(240, 147, 251, 0.15) 100%);"></div>
+    
+    <!-- Formas geométricas flotantes -->
+    <div class="absolute top-[15%] left-[10%] rounded-full opacity-25 animate-float" style="width: 180px; height: 180px; background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%); filter: blur(70px);"></div>
+    <div class="absolute bottom-[15%] right-[10%] rounded-full opacity-30 animate-float" style="width: 160px; height: 160px; background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%); filter: blur(60px); animation-delay: 3s;"></div>
+  </div>
+
+  <div class="relative z-10 max-w-[1200px] mx-auto px-4">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center rounded-full mb-6 border border-white/20" style="gap: 0.75rem; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 1rem; font-size: 1.2rem;">
+        <Icons name="image" class="text-[#fbbf24]" style="width: 30px; height: 30px;" />
+        <span class="text-white font-semibold">Galería de Trabajos</span>
+      </div>
+      
+      <h2 class="text-white mb-6 font-black leading-tight" style="font-size: clamp(2.5rem, 5vw, 3.5rem);">
+        Nuestros Trabajos Realizados
+      </h2>
+      
+      <p class="text-white/80 max-full mx-auto px-6 min-h-24 md:h-20 lg:h-24 leading-relaxed" style="font-size: clamp(1rem, 2.5vw, 1.25rem);">
+        Mira algunos de nuestros trabajos realizados con éxito
+      </p>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      {galleryItems.map((item) => (
+        <div class="rounded-3xl overflow-hidden hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer group" style="background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); border: 1.5px solid rgba(255, 255, 255, 0.25); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
+          <div class="relative aspect-4/3 overflow-hidden">
+            <img 
+              src={item.image} 
+              alt={item.title}
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent"></div>
+            
+            <!-- Badge de categoría -->
+            <div class="absolute top-4 left-4 px-4 py-2 rounded-full text-white text-sm font-semibold shadow-lg" style={`background: ${item.gradient};`}>
+              {item.category}
+            </div>
+
+            <!-- Rating -->
+            <div class="absolute top-4 right-4 flex items-center gap-1 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded-full">
+              {[...Array(item.rating)].map(() => (
+                <Icons name="star" class="w-3.5 h-3.5 text-[#fbbf24]" style="fill: #fbbf24;" />
+              ))}
+            </div>
+          </div>
+
+          <div style="padding: clamp(1.25rem, 3vw, 1.5rem);">
+            <h3 class="text-white group-hover:text-violet-300 transition-colors" style="font-size: clamp(1.25rem, 3vw, 1.5rem); font-weight: 700; margin-bottom: 0.75rem;">
+              {item.title}
+            </h3>
+            <p class="text-white/80 text-sm leading-relaxed" style="margin-bottom: 1rem;">
+              {item.description}
+            </p>
+            
+            <div class="flex items-center justify-between text-xs text-white/60">
+              <div class="flex items-center gap-1">
+                <Icons name="clock" class="w-4 h-4" />
+                <span>{item.time}</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <Icons name="checkCircle" class="w-4 h-4 text-green-400" />
+                <span>Completado</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

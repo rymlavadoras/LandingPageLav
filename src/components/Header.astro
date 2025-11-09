@@ -1,0 +1,128 @@
+---
+const navItems = [
+  { href: '#inicio', label: 'Inicio' },
+  { href: '#servicios', label: 'Servicios' },
+  { href: '#galeria', label: 'Galería' },
+  { href: '#nosotros', label: 'Nosotros' },
+  { href: '#testimonios', label: 'Testimonios' },
+  { href: '#contacto', label: 'Contacto' }
+];
+---
+
+<style>
+  .mobile-menu-link:hover {
+    background: rgba(255, 255, 255, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+  }
+</style>
+
+<header class="fixed top-0 left-0 right-0 z-1000 backdrop-blur-[20px] border-b border-white/20 transition-all duration-300" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 50%, rgba(240, 147, 251, 0.15) 100%);">
+  <div class="flex items-center justify-between max-w-[1200px] mx-auto w-full" style="padding: clamp(1rem, 2.5vw, 1.5rem) clamp(1rem, 3vw, 2rem);">
+    {/* Logo */}
+    <a href="/" class="flex items-center gap-1.5 lg:gap-2 text-xl lg:text-2xl font-bold text-white no-underline">
+      <div class="w-8 h-8 lg:w-10 lg:h-10 bg-linear-to-br from-[#667eea] to-[#f093fb] rounded-lg lg:rounded-xl flex items-center justify-center shadow-[0_8px_25px_rgba(102,126,234,0.3)]">
+        <svg class="w-5 h-5 lg:w-6 lg:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+        </svg>
+      </div>
+      <span>RyM Lavadoras</span>
+    </a>
+
+    {/* Desktop Navigation */}
+    <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class="text-white no-underline font-medium text-sm lg:text-base transition-all duration-300 hover:text-[#f093fb] hover:-translate-y-0.5 relative"
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    {/* Mobile Menu Button */}
+    <button
+      id="mobile-menu-button"
+      class="lg:hidden flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-white/10 border border-white/20 rounded-xl cursor-pointer backdrop-blur-[10px] text-white hover:scale-105 active:scale-95 transition-all duration-300"
+      aria-label="Toggle menu"
+    >
+      <svg id="menu-icon" class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+      <svg id="close-icon" class="w-5 h-5 lg:w-6 lg:h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  {/* Mobile Menu */}
+  <div
+    id="mobile-menu"
+    class="lg:hidden backdrop-blur-[20px] border-t border-white/20 overflow-hidden max-h-0 opacity-0 transition-all duration-300"
+    style="background: rgba(255, 255, 255, 0.15);"
+  >
+    <nav class="flex flex-col px-4 py-4 lg:px-6 lg:py-6 gap-3 lg:gap-4">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class="mobile-menu-link text-white no-underline font-medium text-base lg:text-lg py-3 lg:py-4 rounded-xl transition-all duration-300 border hover:translate-x-2"
+          style="padding-left: 2rem; padding-right: 1rem; background: rgba(255, 255, 255, 0.2); border-color: rgba(255, 255, 255, 0.3);"
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const mobileLinks = document.querySelectorAll('.mobile-menu-link');
+
+  let isMenuOpen = false;
+
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+    
+    if (isMenuOpen) {
+      mobileMenu?.classList.remove('max-h-0', 'opacity-0');
+      mobileMenu?.classList.add('max-h-96', 'opacity-100');
+      menuIcon?.classList.add('hidden');
+      closeIcon?.classList.remove('hidden');
+    } else {
+      mobileMenu?.classList.add('max-h-0', 'opacity-0');
+      mobileMenu?.classList.remove('max-h-96', 'opacity-100');
+      menuIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    }
+  }
+
+  menuButton?.addEventListener('click', toggleMenu);
+
+  // Close menu when clicking on a link
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (isMenuOpen) {
+        toggleMenu();
+      }
+    });
+  });
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+      e.preventDefault();
+      const href = anchor.getAttribute('href');
+      if (href) {
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  });
+</script>

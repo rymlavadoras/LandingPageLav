@@ -1,0 +1,208 @@
+---
+import Icons from "./Icons.astro";
+
+const contactOptions = [
+  {
+    icon: "messageCircle",
+    label: "WhatsApp",
+    action:
+      "https://wa.me/51955112484?text=Hola,%20necesito%20ayuda%20con%20mi%20lavadora.%20¿Podrían%20ayudarme?",
+    description: "Respuesta inmediata",
+    gradient: "linear-gradient(135deg, #25d366 0%, #128c7e 100%)",
+  },
+  {
+    icon: "phone",
+    label: "Llamar",
+    action: "tel:+51955112484",
+    description: "Atención directa",
+    gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+  },
+  {
+    icon: "clock",
+    label: "Emergencia",
+    action:
+      "https://wa.me/51955112484?text=EMERGENCIA:%20Necesito%20servicio%20urgente%20de%20reparación%20de%20lavadora",
+    description: "Servicio rápido",
+    gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+  },
+];
+
+const quickServices = [
+  "Reparación General",
+  "Mantenimiento",
+  "Cambio de Repuestos",
+  "Diagnóstico",
+];
+---
+
+<!-- Botón principal flotante -->
+<div
+  id="whatsapp-main-btn"
+  class="fixed z-1000 cursor-pointer"
+  style="bottom: clamp(1rem, 4vw, 2rem); right: clamp(1rem, 4vw, 2rem);"
+>
+  <div class="relative">
+    <!-- Notification indicator -->
+    <div
+      class="absolute -top-1 -right-1 bg-red-500 rounded-full animate-pulse border-2 border-white shadow-lg"
+      style="width: clamp(12px, 3vw, 16px); height: clamp(12px, 3vw, 16px);"
+    >
+    </div>
+
+    <!-- Main button -->
+    <div
+      class="rounded-full flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-300"
+      style="width: clamp(60px, 12vw, 70px); height: clamp(60px, 12vw, 70px); background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);"
+    >
+      <Icons
+        name="messageCircle"
+        class="text-white"
+        style="width: clamp(28px, 7vw, 35px); height: clamp(28px, 7vw, 35px);"
+      />
+    </div>
+  </div>
+</div>
+
+<!-- Panel expandido -->
+<div
+  id="whatsapp-panel"
+  class="fixed z-998 opacity-0 scale-95 pointer-events-none transition-all duration-200 ease-out"
+  style="bottom: clamp(1.5rem, 5vw, 2.5rem); right: clamp(1.5rem, 5vw, 2.5rem); width: min(90vw, 380px);"
+>
+  <div
+    class="rounded-3xl"
+    style="padding: 1rem; background: linear-gradient(145deg, rgba(30, 20, 60, 0.95), rgba(50, 30, 70, 0.95)); backdrop-filter: blur(25px); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;"
+  >
+    <!-- Header -->
+    <div
+      class="flex items-center justify-between border-b border-white/30"
+      style="margin-bottom: 0.5rem; padding-bottom: 0.5rem;"
+    >
+      <div class="flex items-center gap-3">
+        <div
+          class="w-12 h-12 rounded-full flex items-center justify-center"
+          style="background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);"
+        >
+          <Icons name="messageCircle" class="w-6 h-6 text-white" />
+        </div>
+        <div>
+          <h3 class="text-white font-bold text-lg">RyM Lavadoras</h3>
+          <p class="text-white/70 text-xs">En línea ahora</p>
+        </div>
+      </div>
+      <button
+        id="close-whatsapp-panel"
+        class="w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all"
+        aria-label="Cerrar"
+      >
+        <Icons name="x" class="w-4 h-4 text-white" />
+      </button>
+    </div>
+
+    <!-- Contact Options -->
+    <div class="mb-7">
+      {
+        contactOptions.map((option, index) => (
+          <a
+            href={option.action}
+            target={option.action.startsWith("http") ? "_blank" : undefined}
+            rel={
+              option.action.startsWith("http")
+                ? "noopener noreferrer"
+                : undefined
+            }
+             class="flex items-center rounded-2xl hover:scale-105 hover:shadow-2xl transition-all duration-300 shadow-xl"
+             style={`background: ${option.gradient}; padding: 0.3rem; gap: 1rem; ${index < contactOptions.length - 1 ? "margin-bottom: 0.5rem;" : ""}`}
+          >
+            <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+              <Icons name={option.icon} class="w-5 h-5 text-white" />
+            </div>
+            <div class="flex-1">
+              <p class="text-white font-bold text-base">{option.label}</p>
+              <p class="text-white/90 text-sm">{option.description}</p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+
+    <!-- Quick Services -->
+    <div style="margin-bottom: 1rem;">
+      <h4 class="text-white font-bold text-base" style="margin: 0.5rem;">
+        Servicios Rápidos:
+      </h4>
+      <div class="flex flex-wrap" style="gap: 0.5rem;">
+        {
+          quickServices.map((service) => (
+            <span
+              class="bg-white/20 backdrop-blur-sm rounded-full text-white font-medium text-sm hover:bg-white/30 transition-all cursor-pointer"
+              style="padding: 0.2rem 0.5rem;"
+            >
+              {service}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Additional Info -->
+    <div
+      class="rounded-2xl"
+      style="margin-top: 0.5rem; padding: 0.35rem; background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03)); border: 1px solid rgba(255, 255, 255, 0.15);"
+    >
+      <div
+        class="flex items-center"
+        style="gap: 0.5rem; margin-bottom: 0.5rem;"
+      >
+        <Icons name="clock" class="w-5 h-5 text-green-300" />
+        <p class="text-white font-semibold text-sm">
+          Tiempo de respuesta: menos de 2 minutos
+        </p>
+      </div>
+      <div class="flex items-center" 
+           style="gap: 0.5rem;">
+        <Icons name="checkCircle" class="w-5 h-5 text-green-300" />
+        <p class="text-white font-medium text-sm">
+          Garantía en todos nuestros servicios
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const mainBtn = document.getElementById("whatsapp-main-btn");
+  const panel = document.getElementById("whatsapp-panel");
+  const closeBtn = document.getElementById("close-whatsapp-panel");
+
+  let isPanelOpen = false;
+
+  function togglePanel() {
+    isPanelOpen = !isPanelOpen;
+
+    if (isPanelOpen) {
+      panel?.classList.remove("opacity-0", "scale-95", "pointer-events-none");
+      panel?.classList.add("opacity-100", "scale-100", "pointer-events-auto");
+      mainBtn?.classList.add("scale-0", "opacity-0");
+    } else {
+      panel?.classList.add("opacity-0", "scale-95", "pointer-events-none");
+      panel?.classList.remove(
+        "opacity-100",
+        "scale-100",
+        "pointer-events-auto",
+      );
+      mainBtn?.classList.remove("scale-0", "opacity-0");
+    }
+  }
+
+  mainBtn?.addEventListener("click", togglePanel);
+  closeBtn?.addEventListener("click", togglePanel);
+
+  // Close panel when clicking outside
+  document.addEventListener("click", (e) => {
+    const target = e.target as Node;
+    if (isPanelOpen && !panel?.contains(target) && !mainBtn?.contains(target)) {
+      togglePanel();
+    }
+  });
+</script>

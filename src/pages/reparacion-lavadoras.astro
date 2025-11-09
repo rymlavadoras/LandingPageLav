@@ -1,0 +1,314 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import Icons from '../components/Icons.astro';
+
+const title = "Reparación de Lavadoras en Chiclayo | Servicio Técnico Especializado | R&M Lavadoras";
+const description = "Reparación profesional de lavadoras en Chiclayo, Tuman, Pimentel, José Leonardo Ortiz y toda Lambayeque. Técnicos certificados, repuestos originales, garantía de 1 año. Atendemos Samsung, LG, Whirlpool, Mabe, Electrolux. ☎️ +51 955 112 484";
+
+// FAQ Schema para mejor SEO
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta la reparación de una lavadora en Chiclayo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El costo de reparación varía según el problema. El diagnóstico inicial es gratuito y luego se cotiza según los repuestos necesarios. Contáctanos al +51 955 112 484 para una cotización personalizada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué marcas de lavadoras reparan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reparamos todas las marcas: Samsung, LG, Whirlpool, Mabe, Electrolux, Bosch, entre otras. Contamos con repuestos originales y garantía en todos nuestros trabajos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dan garantía en la reparación?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, ofrecemos 1 año de garantía en todos nuestros trabajos de reparación y repuestos instalados."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Atienden a domicilio en Chiclayo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, atendemos a domicilio en todo Chiclayo, Tuman, Pimentel, La Victoria, Lambayeque y toda la región sin costo adicional."
+      }
+    }
+  ]
+};
+
+const problemasComunes = [
+  'Lavadora no enciende',
+  'No centrifuga',
+  'No desagua',
+  'Hace ruidos extraños',
+  'Pierde agua',
+  'No lava bien',
+  'Problemas eléctricos',
+  'Tarjeta electrónica dañada'
+];
+
+const marcasReparamos = [
+  { nombre: 'Samsung', descripcion: 'Especialistas en lavadoras Samsung' },
+  { nombre: 'LG', descripcion: 'Reparación de lavadoras LG' },
+  { nombre: 'Whirlpool', descripcion: 'Servicio técnico Whirlpool' },
+  { nombre: 'Mabe', descripcion: 'Reparación de lavadoras Mabe' },
+  { nombre: 'Electrolux', descripcion: 'Técnicos certificados Electrolux' },
+  { nombre: 'Bosch', descripcion: 'Servicio especializado Bosch' }
+];
+
+const zonasAtencion = [
+  'Chiclayo',
+  'Tuman',
+  'Pimentel',
+  'Patapo',
+  'La Victoria',
+  'Lambayeque',
+  'Ferreñafe',
+  'Monsefú',
+  'Eten',
+  'y más...'
+];
+---
+
+<MainLayout title={title} description={description} canonical="https://rymlavadoras.vercel.app/reparacion-lavadoras">
+  <!-- FAQ Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  
+  <Header />
+  
+  <main>
+    <!-- Hero SEO -->
+    <section class="min-h-[70vh] flex items-center justify-center relative overflow-hidden" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); padding: clamp(7rem, 12vw, 9rem) 1rem clamp(3rem, 6vw, 5rem) 1rem;">
+      <!-- Efectos de fondo -->
+      <div class="absolute inset-0 z-1">
+        <div class="absolute top-0 left-0 w-full h-full" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 50%, rgba(240, 147, 251, 0.3) 100%); animation: pulse 3s ease-in-out infinite;"></div>
+        <div class="absolute top-[20%] left-[20%] rounded-full" style="width: clamp(80px, 15vw, 128px); height: clamp(80px, 15vw, 128px); background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%); filter: blur(60px); opacity: 0.3; animation: float 3s ease-in-out infinite;"></div>
+        <div class="absolute bottom-[20%] right-[20%] rounded-full" style="width: clamp(100px, 20vw, 160px); height: clamp(100px, 20vw, 160px); background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%); filter: blur(60px); opacity: 0.3; animation: float 3s ease-in-out infinite; animation-delay: 2s;"></div>
+      </div>
+      
+      <div class="relative z-10 text-center max-w-5xl mx-auto">
+        <h1 class="text-white mb-6 px-4" style="font-size: clamp(2rem, 6vw, 4rem); font-weight: 900; line-height: 1.2;">
+          Reparación de Lavadoras en{' '}
+          <span class="bg-clip-text text-transparent" style="background: linear-gradient(135deg, #fbbf24 0%, #f97316 50%, #ef4444 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            Chiclayo
+          </span>
+        </h1>
+        
+        <p class="text-white/90 mb-8 max-w-[600px] mx-auto px-4" style="font-size: clamp(1rem, 3vw, 1.25rem); line-height: 1.6; margin: 0 auto 2rem;">
+          Servicio técnico profesional en Chiclayo, Tuman, Pimentel y toda la región Lambayeque. 
+          Reparamos todas las marcas con garantía de 1 año.
+        </p>
+
+        <div class="flex flex-col px-4" style="gap: clamp(1rem, 2.5vw, 1.5rem); justify-content: center; align-items: center; margin-bottom: 3rem;">
+          <a
+            href="https://wa.me/51955112484?text=Hola,%20necesito%20reparación%20de%20lavadora%20en%20Chiclayo"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-success inline-flex items-center justify-center text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl w-full max-w-[400px] mx-auto hover:scale-105 hover:-translate-y-1"
+            style="gap: 0.5rem; font-size: clamp(1rem, 2.5vw, 1.125rem); padding: clamp(1rem, 3vw, 1.25rem) clamp(1.5rem, 4vw, 2.5rem); background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);"
+          >
+            <Icons name="phone" style="width: clamp(20px, 5vw, 24px); height: clamp(20px, 5vw, 24px);" />
+            Solicitar Reparación
+            <Icons name="arrowRight" style="width: clamp(16px, 4vw, 20px); height: clamp(16px, 4vw, 20px);" />
+          </a>
+          
+          <a
+            href="tel:+51955112484"
+            class="btn-outline inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold rounded-xl transition-all duration-300 w-full max-w-[400px] mx-auto hover:scale-105 hover:-translate-y-1"
+            style="gap: 0.5rem; font-size: clamp(1rem, 2.5vw, 1.125rem); padding: clamp(1rem, 3vw, 1.25rem) clamp(1.5rem, 4vw, 2.5rem); background: transparent;"
+          >
+            <Icons name="phone" style="width: clamp(20px, 5vw, 24px); height: clamp(20px, 5vw, 24px);" />
+            Llamar Ahora
+          </a>
+        </div>
+
+        <!-- Stats rápidos -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          <div class="text-center rounded-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300" style="padding: clamp(1rem, 2.5vw, 1.5rem); background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); border: 1.5px solid rgba(255, 255, 255, 0.25); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
+            <p class="text-white font-black mb-1" style="font-size: clamp(1.5rem, 4vw, 2rem);">500+</p>
+            <p class="text-white/70" style="font-size: clamp(0.75rem, 2vw, 0.875rem);">Reparaciones</p>
+          </div>
+          <div class="text-center rounded-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300" style="padding: clamp(1rem, 2.5vw, 1.5rem); background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); border: 1.5px solid rgba(255, 255, 255, 0.25); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
+            <p class="text-white font-black mb-1" style="font-size: clamp(1.5rem, 4vw, 2rem);">98%</p>
+            <p class="text-white/70" style="font-size: clamp(0.75rem, 2vw, 0.875rem);">Satisfacción</p>
+          </div>
+          <div class="text-center rounded-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300" style="padding: clamp(1rem, 2.5vw, 1.5rem); background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); border: 1.5px solid rgba(255, 255, 255, 0.25); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
+            <p class="text-white font-black mb-1" style="font-size: clamp(1.5rem, 4vw, 2rem);">1 Año</p>
+            <p class="text-white/70" style="font-size: clamp(0.75rem, 2vw, 0.875rem);">Garantía</p>
+          </div>
+          <div class="text-center rounded-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300" style="padding: clamp(1rem, 2.5vw, 1.5rem); background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); border: 1.5px solid rgba(255, 255, 255, 0.25); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
+            <p class="text-white font-black mb-1" style="font-size: clamp(1.5rem, 4vw, 2rem);">4+</p>
+            <p class="text-white/70" style="font-size: clamp(0.75rem, 2vw, 0.875rem);">Años Exp.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problemas Comunes -->
+    <section class="relative overflow-hidden" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); padding: clamp(3rem, 6vw, 6rem) 1rem;">
+      <!-- Efectos de fondo -->
+      <div class="absolute inset-0 z-1">
+        <div class="absolute inset-0 animate-pulse-slow" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 50%, rgba(240, 147, 251, 0.2) 100%);"></div>
+        <div class="absolute top-[10%] left-[10%] rounded-full opacity-20 animate-float" style="width: 200px; height: 200px; background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%); filter: blur(80px);"></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-16">
+          <div class="inline-flex items-center rounded-full mb-6 border border-white/20" style="gap: 0.75rem; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 1rem; font-size: 1.2rem;">
+            <Icons name="tool" class="text-[#fbbf24]" style="width: 30px; height: 30px;" />
+            <span class="text-white font-semibold">Problemas que Solucionamos</span>
+          </div>
+          
+          <h2 class="text-white mb-6 font-black leading-tight" style="font-size: clamp(2.75rem, 5.5vw, 3.75rem);">
+            Problemas Comunes que <span style="background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Reparamos</span>
+          </h2>
+          
+          <p class="text-white/80 max-full mx-auto px-6 leading-relaxed" style="font-size: clamp(1.1rem, 2.75vw, 1.4rem); margin-bottom: 2rem;">
+            Solucionamos cualquier falla en tu lavadora con repuestos originales
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {problemasComunes.map((problema) => (
+            <div class="rounded-xl hover:scale-105 hover:-translate-y-1 transition-all duration-300 flex items-center" style="padding: clamp(1rem, 2.5vw, 1.25rem); gap: 0.875rem; background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); border: 1.5px solid rgba(255, 255, 255, 0.25); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
+              <Icons name="checkCircle" class="text-green-400 shrink-0" style="width: clamp(20px, 5vw, 24px); height: clamp(20px, 5vw, 24px);" />
+              <p class="text-white font-semibold" style="font-size: clamp(0.875rem, 2.25vw, 1rem);">{problema}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Marcas que Reparamos -->
+    <section class="relative overflow-hidden" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); padding: clamp(3rem, 6vw, 6rem) 1rem;">
+      <!-- Efectos de fondo -->
+      <div class="absolute inset-0 z-1">
+        <div class="absolute inset-0 animate-pulse-slow" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 50%, rgba(240, 147, 251, 0.2) 100%);"></div>
+        <div class="absolute bottom-[10%] right-[10%] rounded-full opacity-20 animate-float" style="width: 200px; height: 200px; background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%); filter: blur(80px); animation-delay: 2s;"></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-16">
+          <div class="inline-flex items-center rounded-full mb-6 border border-white/20" style="gap: 0.75rem; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 1rem; font-size: 1.2rem;">
+            <Icons name="star" class="text-[#fbbf24]" style="width: 30px; height: 30px;" />
+            <span class="text-white font-semibold">Todas las Marcas</span>
+          </div>
+          
+          <h2 class="text-white mb-6 font-black leading-tight" style="font-size: clamp(2.75rem, 5.5vw, 3.75rem);">
+            Reparamos Todas las <span style="background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Marcas</span>
+          </h2>
+          
+          <p class="text-white/80 max-full mx-auto px-6 min-h-24 md:h-20 lg:h-24 leading-relaxed" style="font-size: clamp(1.1rem, 2.75vw, 1.4rem); margin-bottom: 2rem;">
+            Somos especialistas en reparación de lavadoras de todas las marcas. Repuestos originales y garantía incluida.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {marcasReparamos.map((marca) => (
+            <div class="rounded-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300 text-center" style="padding: clamp(1.5rem, 3.5vw, 2rem); background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); border: 1.5px solid rgba(255, 255, 255, 0.25); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
+              <div class="rounded-xl flex items-center justify-center mb-4 shadow-lg" style="width: clamp(48px, 12vw, 64px); height: clamp(48px, 12vw, 64px); margin: 0 auto; background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%);">
+                <Icons name="star" class="text-white" style="width: clamp(24px, 6vw, 32px); height: clamp(24px, 6vw, 32px);" />
+              </div>
+              <h3 class="text-white font-bold mb-2" style="font-size: clamp(1.25rem, 3vw, 1.5rem);">{marca.nombre}</h3>
+              <p class="text-white/70" style="font-size: clamp(0.875rem, 2.25vw, 1rem);">{marca.descripcion}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Zonas de Atención -->
+    <section class="relative overflow-hidden" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); padding: clamp(3rem, 6vw, 6rem) 1rem;">
+      <!-- Efectos de fondo -->
+      <div class="absolute inset-0 z-1">
+        <div class="absolute inset-0 animate-pulse-slow" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 50%, rgba(240, 147, 251, 0.2) 100%);"></div>
+        <div class="absolute top-[20%] right-[15%] rounded-full opacity-20 animate-float" style="width: 200px; height: 200px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); filter: blur(80px); animation-delay: 1s;"></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-16">
+          <div class="inline-flex items-center rounded-full mb-6 border border-white/20" style="gap: 0.75rem; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 1rem; font-size: 1.2rem;">
+            <Icons name="mapPin" class="text-[#fbbf24]" style="width: 30px; height: 30px;" />
+            <span class="text-white font-semibold">Cobertura Regional</span>
+          </div>
+          
+          <h2 class="text-white mb-6 font-black leading-tight" style="font-size: clamp(2.75rem, 5.5vw, 3.75rem);">
+            Zonas de <span style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Atención</span>
+          </h2>
+          
+          <p class="text-white/80 max-full mx-auto px-6 min-h-24 md:h-20 lg:h-24 leading-relaxed" style="font-size: clamp(1.1rem, 2.75vw, 1.4rem); margin-bottom: 2rem;">
+            Llegamos a toda la región Lambayeque. Servicio a domicilio sin costo adicional.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+          {zonasAtencion.map((zona) => (
+            <div class="rounded-xl hover:scale-105 hover:-translate-y-1 transition-all duration-300 flex items-center" style="padding: clamp(1rem, 2.5vw, 1.25rem); gap: 0.75rem; background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); border: 1.5px solid rgba(255, 255, 255, 0.25); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
+              <Icons name="mapPin" class="text-green-400 shrink-0" style="width: clamp(18px, 4.5vw, 22px); height: clamp(18px, 4.5vw, 22px);" />
+              <p class="text-white font-semibold" style="font-size: clamp(0.875rem, 2.25vw, 1rem);">{zona}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="relative overflow-hidden" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); padding: clamp(3rem, 6vw, 5rem) 1rem;">
+      <!-- Efectos de fondo -->
+      <div class="absolute inset-0 z-1">
+        <div class="absolute inset-0 animate-pulse-slow" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 50%, rgba(240, 147, 251, 0.2) 100%);"></div>
+        <div class="absolute top-[15%] left-[15%] rounded-full opacity-20 animate-float" style="width: 200px; height: 200px; background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%); filter: blur(80px);"></div>
+        <div class="absolute bottom-[15%] right-[15%] rounded-full opacity-20 animate-float" style="width: 200px; height: 200px; background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); filter: blur(80px); animation-delay: 2s;"></div>
+      </div>
+
+      <div class="relative z-10 text-center" style="width: 100%; max-width: 700px; margin: 0 auto; padding: 0 clamp(1.5rem, 4vw, 2rem);">
+        <div class="inline-flex items-center rounded-full mb-6 border border-white/20" style="gap: 0.75rem; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 1rem; font-size: 1.2rem;">
+          <Icons name="zap" class="text-[#fbbf24]" style="width: 30px; height: 30px;" />
+          <span class="text-white font-semibold">Atención Inmediata</span>
+        </div>
+
+        <h2 class="text-white mb-5 font-black leading-tight" style="font-size: clamp(2.25rem, 5.5vw, 3.25rem);">
+          ¿Necesitas Reparar tu Lavadora?
+        </h2>
+        
+        <p class="text-white/80 mb-8 leading-relaxed" style="font-size: clamp(1rem, 2.75vw, 1.3rem);">
+          Contáctanos ahora y agenda tu servicio. Atención inmediata en Chiclayo y Lambayeque.
+        </p>
+        
+        <a
+          href="https://wa.me/51955112484?text=Hola,%20necesito%20reparar%20mi%20lavadora%20urgente"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center hover:scale-105 transition-all duration-300 shadow-2xl"
+          style="gap: 0.75rem; background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); color: white; font-weight: 700; font-size: clamp(1rem, 2.5vw, 1.25rem); padding: clamp(0.875rem, 2.5vw, 1.25rem) clamp(2rem, 5vw, 3rem); border-radius: 0.875rem; border: 2px solid rgba(255, 255, 255, 0.2);"
+        >
+          <Icons name="messageCircle" style="width: clamp(20px, 4.5vw, 24px); height: clamp(20px, 4.5vw, 24px);" />
+          Contactar Ahora
+        </a>
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  
+  <Footer />
+  <WhatsAppButton />
+</MainLayout>
+
+

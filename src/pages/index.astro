@@ -1,0 +1,31 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import Gallery from '../components/Gallery.astro';
+import WhyChooseUs from '../components/WhyChooseUs.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+const title = "R&M Lavadoras – Reparación de Lavadoras en Chiclayo y Lambayeque | Servicio Técnico Profesional";
+const description = "Servicio técnico profesional de reparación y mantenimiento de lavadoras en Chiclayo, Tuman y toda la región Lambayeque. Atendemos todas las marcas: LG, Samsung, Whirlpool, Mabe, Electrolux, Bosch. Garantía en todos nuestros trabajos. ☎️ +51 955 112 484";
+---
+
+<MainLayout title={title} description={description}>
+  <Header />
+  
+  <main>
+    <Hero />
+    <Services />
+    <Gallery />
+    <WhyChooseUs />
+    <Testimonials />
+    <Contact />
+  </main>
+  
+  <Footer />
+  <WhatsAppButton />
+</MainLayout>

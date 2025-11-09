@@ -1,0 +1,102 @@
+---
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "R&M Lavadoras",
+  "image": "https://rymlavadoras.vercel.app/img/og.jpg",
+  "@id": "https://rymlavadoras.vercel.app",
+  "url": "https://rymlavadoras.vercel.app",
+  "telephone": "+51955112484",
+  "email": "rymlavadoras@gmail.com",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Tuman",
+    "addressLocality": "Chiclayo",
+    "addressRegion": "Lambayeque",
+    "postalCode": "14000",
+    "addressCountry": "PE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -6.7714,
+    "longitude": -79.8410
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "08:00",
+      "closes": "18:00"
+    }
+  ],
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Chiclayo"
+    },
+    {
+      "@type": "City",
+      "name": "Lambayeque"
+    },
+    {
+      "@type": "City",
+      "name": "La Victoria"
+    },
+    {
+      "@type": "City",
+      "name": "Pimentel"
+    },
+    {
+      "@type": "City",
+      "name": "José Leonardo Ortiz"
+    },
+    {
+      "@type": "City",
+      "name": "Tuman"
+    }
+  ],
+  "description": "Servicio técnico profesional de reparación y mantenimiento de lavadoras en Chiclayo y toda la región Lambayeque. Atendemos todas las marcas: LG, Samsung, Whirlpool, Electrolux, Mabe. Garantía en todos nuestros trabajos.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios de Reparación",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Reparación de Lavadoras",
+          "description": "Reparación profesional de lavadoras de todas las marcas"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Mantenimiento Preventivo",
+          "description": "Mantenimiento preventivo y correctivo de lavadoras"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cambio de Repuestos",
+          "description": "Cambio de repuestos originales y compatibles"
+        }
+      }
+    ]
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+

@@ -1,0 +1,184 @@
+---
+import Icons from './Icons.astro';
+
+const contactInfo = [
+  {
+    icon: 'phone',
+    title: 'Teléfono',
+    value: '+51 955 112 484',
+    description: 'Línea directa',
+    gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    action: 'tel:+51955112484'
+  },
+  {
+    icon: 'messageCircle',
+    title: 'WhatsApp',
+    value: '+51 955 112 484',
+    description: 'Respuesta inmediata',
+    gradient: 'linear-gradient(135deg, #25d366 0%, #128c7e 100%)',
+    action: 'https://wa.me/51955112484?text=Hola,%20necesito%20información%20sobre%20sus%20servicios%20de%20reparación%20de%20lavadoras.'
+  },
+  {
+    icon: 'mail',
+    title: 'Email',
+    value: 'rymlavadoras@gmail.com',
+    description: 'Consulta por email',
+    gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+    action: 'mailto:rymlavadoras@gmail.com'
+  },
+  {
+    icon: 'mapPin',
+    title: 'Ubicación',
+    value: 'Chiclayo, Tuman',
+    description: 'Servicio a domicilio',
+    gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
+    action: '#'
+  }
+];
+
+const services = [
+  'Reparación General',
+  'Mantenimiento Preventivo',
+  'Cambio de Repuestos',
+  'Diagnóstico Electrónico',
+  'Instalación Nueva'
+];
+---
+
+<section id="contacto" class="relative overflow-hidden" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); padding: clamp(3rem, 6vw, 6rem) 1rem;">
+  <!-- Efectos de fondo -->
+  <div class="absolute inset-0 z-1">
+    <div class="absolute inset-0 animate-pulse-slow" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 50%, rgba(240, 147, 251, 0.2) 100%);"></div>
+    <div class="absolute top-[10%] left-[10%] rounded-full opacity-20 animate-float" style="width: 200px; height: 200px; background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%); filter: blur(80px);"></div>
+  </div>
+
+  <div class="relative z-10 max-w-[1200px] mx-auto px-4">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center rounded-full mb-6 border border-white/20" style="gap: 0.75rem; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 1rem; font-size: 1.2rem;">
+        <Icons name="messageCircle" class="text-[#fbbf24]" style="width: 30px; height: 30px;" />
+        <span class="text-white font-semibold">Contáctanos</span>
+      </div>
+      
+      <h2 class="text-white mb-6 font-black leading-tight" style="font-size: clamp(2.5rem, 5vw, 3.5rem);">
+        Agenda tu Servicio
+      </h2>
+      
+      <p class="text-white/80 max-full mx-auto px-6 min-h-24 md:h-20 lg:h-24 leading-relaxed" style="font-size: clamp(1rem, 2.5vw, 1.25rem);">
+        Estamos listos para ayudarte. Contáctanos por tu medio preferido
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+      <!-- Contact Info -->
+      <div class="flex flex-col gap-5 md:gap-6">
+        {contactInfo.map((info) => (
+          <a
+            href={info.action}
+            target={info.action.startsWith('http') ? '_blank' : undefined}
+            rel={info.action.startsWith('http') ? 'noopener noreferrer' : undefined}
+            class="rounded-2xl flex items-center hover:scale-105 transition-all duration-300 group"
+            style="padding: clamp(1.25rem, 3vw, 1.5rem); gap: 1rem; background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); border: 1.5px solid rgba(255, 255, 255, 0.25); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);"
+          >
+            <div class="rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform" style={`width: 64px; height: 64px; background: ${info.gradient};`}>
+              <Icons name={info.icon} class="w-8 h-8 text-white" />
+            </div>
+            <div>
+              <h4 class="text-white font-bold text-lg mb-1">{info.title}</h4>
+              <p class="text-white/90 font-semibold">{info.value}</p>
+              <p class="text-white/60 text-sm">{info.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- Contact Form -->
+      <div class="rounded-3xl" style="padding: clamp(1.5rem, 4vw, 1rem); background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); border: 1.5px solid rgba(255, 255, 255, 0.25); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
+        <h3 class="text-white" style="font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; margin-bottom: 1.5rem;">
+          Solicita un Servicio
+        </h3>
+        
+        <form id="contact-form" style="display: flex; flex-direction: column; gap: 1.25rem;">
+          <div>
+            <label for="name" class="block text-white font-medium mb-2 text-sm">Nombre Completo</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full rounded-xl border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-violet-500 transition-all" style="padding: clamp(0.75rem, 2vw, 1rem); background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); font-size: clamp(0.875rem, 2vw, 1rem);"
+              placeholder="Tu nombre"
+            />
+          </div>
+
+          <div>
+            <label for="phone" class="block text-white font-medium mb-2 text-sm">Teléfono</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              class="w-full rounded-xl border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-violet-500 transition-all" style="padding: clamp(0.75rem, 2vw, 1rem); background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); font-size: clamp(0.875rem, 2vw, 1rem);"
+              placeholder="+51 999 999 999"
+            />
+          </div>
+
+          <div>
+            <label for="service" class="block text-white font-medium mb-2 text-sm">Servicio</label>
+            <select
+              id="service"
+              name="service"
+              required
+              class="w-full rounded-xl border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-violet-500 transition-all" style="padding: clamp(0.75rem, 2vw, 1rem); background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); font-size: clamp(0.875rem, 2vw, 1rem);"
+            >
+              <option value="" class="bg-gray-900">Selecciona un servicio</option>
+              {services.map((service) => (
+                <option value={service} class="bg-gray-900">{service}</option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label for="message" class="block text-white font-medium mb-2 text-sm">Mensaje</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              required
+              class="w-full rounded-xl border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-violet-500 transition-all resize-none" style="padding: clamp(0.75rem, 2vw, 1rem); background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); font-size: clamp(0.875rem, 2vw, 1rem);"
+              placeholder="Describe el problema de tu lavadora..."
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full text-white font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: clamp(1rem, 2.5vw, 1.25rem); font-size: clamp(1rem, 2.5vw, 1.125rem);"
+          >
+            <Icons name="send" class="w-5 h-5" />
+            Enviar Mensaje por WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(form);
+    const name = formData.get('name');
+    const phone = formData.get('phone');
+    const service = formData.get('service');
+    const message = formData.get('message');
+    
+    const whatsappMessage = `Hola, soy ${name}. Necesito servicio de ${service}. ${message}. Mi teléfono: ${phone}`;
+    const whatsappUrl = `https://wa.me/51955112484?text=${encodeURIComponent(whatsappMessage)}`;
+    
+    window.open(whatsappUrl, '_blank');
+    form.reset();
+  });
+</script>

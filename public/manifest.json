@@ -1,0 +1,22 @@
+{
+  "name": "R&M Lavadoras - Reparación de Lavadoras en Chiclayo",
+  "short_name": "RyM Lavadoras",
+  "description": "Servicio técnico profesional de reparación y mantenimiento de lavadoras en Chiclayo y Lambayeque",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#667eea",
+  "theme_color": "#667eea",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["business", "utilities"],
+  "lang": "es",
+  "dir": "ltr"
+}
+
+

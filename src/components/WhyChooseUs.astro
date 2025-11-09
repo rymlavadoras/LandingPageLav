@@ -1,0 +1,99 @@
+---
+import Icons from './Icons.astro';
+
+const reasons = [
+  {
+    title: 'Experiencia Comprobada',
+    description: 'Más de 4 años de experiencia en reparación de lavadoras de todas las marcas.',
+    gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    features: ['4+ años de experiencia', 'Técnicos certificados', 'Conocimiento especializado'],
+    icon: 'wrench'
+  },
+  {
+    title: 'Garantía Total',
+    description: 'Ofrecemos garantía completa en todos nuestros trabajos y repuestos.',
+    gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
+    features: ['Garantía de 1 año', 'Repuestos originales', 'Servicio post-venta'],
+    icon: 'shield'
+  },
+  {
+    title: 'Calidad Premium',
+    description: 'Utilizamos solo repuestos de la más alta calidad y herramientas profesionales.',
+    gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
+    features: ['Repuestos premium', 'Herramientas profesionales', 'Estándares altos'],
+    icon: 'star'
+  },
+  {
+    title: 'Precios Justos',
+    description: 'Ofrecemos precios competitivos sin comprometer la calidad del servicio.',
+    gradient: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+    features: ['Precios transparentes', 'Sin costos ocultos', 'Presupuesto gratuito'],
+    icon: 'award'
+  },
+  {
+    title: 'Atención Personalizada',
+    description: 'Cada cliente recibe atención personalizada y seguimiento completo.',
+    gradient: 'linear-gradient(135deg, #667eea 0%, #f093fb 100%)',
+    features: ['Atención personal', 'Seguimiento completo', 'Comunicación directa'],
+    icon: 'users'
+  }
+];
+---
+
+<section id="nosotros" class="relative overflow-hidden" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); padding: clamp(3rem, 6vw, 6rem) 1rem;">
+  <!-- Efectos de fondo espectaculares -->
+  <div class="absolute inset-0 z-1">
+    <!-- Gradientes animados -->
+    <div class="absolute inset-0 animate-pulse-slow" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 50%, rgba(240, 147, 251, 0.2) 100%);"></div>
+    
+    <!-- Formas geométricas flotantes -->
+    <div class="absolute top-[20%] right-[5%] rounded-full opacity-20 animate-float" style="width: 220px; height: 220px; background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%); filter: blur(90px);"></div>
+    <div class="absolute bottom-[10%] left-[10%] rounded-full opacity-25 animate-float" style="width: 180px; height: 180px; background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%); filter: blur(70px); animation-delay: 2s;"></div>
+  </div>
+
+  <div class="relative z-10 max-w-[1200px] mx-auto px-4">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center rounded-full mb-6 border border-white/20" style="gap: 0.75rem; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 1rem; font-size: 1.2rem;">
+        <Icons name="shield" class="text-[#fbbf24]" style="width: 30px; height: 30px;" />
+        <span class="text-white font-semibold">¿Por Qué Elegirnos?</span>
+      </div>
+      
+      <h2 class="text-white mb-6 font-black leading-tight" style="font-size: clamp(2.5rem, 5vw, 3.5rem);">
+        Somos tu Mejor Opción
+      </h2>
+      
+      <p class="text-white/80 max-full mx-auto px-6 min-h-24 md:h-20 lg:h-24 leading-relaxed" style="font-size: clamp(1rem, 2.5vw, 1.25rem);">
+        Conoce las razones por las que miles de clientes confían en nosotros
+      </p>
+    </div>
+
+    <!-- Reasons Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      {reasons.map((reason) => (
+        <div class="rounded-3xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 group" style="padding: clamp(1.5rem, 4vw, 1rem); background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); border: 1.5px solid rgba(255, 255, 255, 0.25); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
+          <div class="rounded-2xl flex items-center justify-center mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300" style={`width: 80px; height: 80px; background: ${reason.gradient};`}>
+            <Icons name={reason.icon} class="w-10 h-10 text-white" />
+          </div>
+          
+          <h3 class="text-white mb-4" style="font-size: clamp(1.5rem, 3vw, 1.75rem); font-weight: 700;">
+            {reason.title}
+          </h3>
+          
+          <p class="text-white/80 mb-6 leading-relaxed">
+            {reason.description}
+          </p>
+          
+          <ul class="space-y-3">
+            {reason.features.map((feature) => (
+              <li class="flex items-center gap-2 text-white/70 text-sm">
+                <Icons name="checkCircle" class="w-5 h-5 text-green-400 shrink-0" />
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

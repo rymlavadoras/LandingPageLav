@@ -1,0 +1,219 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import Icons from '../components/Icons.astro';
+
+const title = "Contacto - R&M Lavadoras | Reparación de Lavadoras en Chiclayo";
+const description = "Contáctanos para reparación y mantenimiento de lavadoras en Chiclayo y Lambayeque. Atención inmediata por WhatsApp, teléfono o email. ☎️ +51 955 112 484 | 📧 rymlavadoras@gmail.com";
+---
+
+<MainLayout title={title} description={description} canonical="https://rymlavadoras.vercel.app/contacto">
+  <Header />
+  
+  <main>
+    <!-- Hero de Contacto -->
+    <section class="min-h-[50vh] flex items-center justify-center relative overflow-hidden" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); padding: clamp(7rem, 12vw, 9rem) 1rem clamp(3rem, 6vw, 5rem) 1rem;">
+      <!-- Efectos de fondo -->
+      <div class="absolute inset-0 z-1">
+        <div class="absolute top-0 left-0 w-full h-full" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 50%, rgba(240, 147, 251, 0.3) 100%); animation: pulse 3s ease-in-out infinite;"></div>
+        <div class="absolute top-[20%] left-[20%] rounded-full" style="width: clamp(80px, 15vw, 128px); height: clamp(80px, 15vw, 128px); background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%); filter: blur(60px); opacity: 0.3; animation: float 3s ease-in-out infinite;"></div>
+        <div class="absolute bottom-[20%] right-[20%] rounded-full" style="width: clamp(100px, 20vw, 160px); height: clamp(100px, 20vw, 160px); background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%); filter: blur(60px); opacity: 0.3; animation: float 3s ease-in-out infinite; animation-delay: 2s;"></div>
+      </div>
+      
+      <div class="relative z-10 text-center max-w-4xl mx-auto">
+        <div class="inline-flex items-center rounded-full mb-6 border border-white/20" style="gap: 0.75rem; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 1rem; font-size: 1.2rem;">
+          <Icons name="messageCircle" class="text-[#fbbf24]" style="width: 30px; height: 30px;" />
+          <span class="text-white font-semibold">Contáctanos</span>
+        </div>
+        
+        <h1 class="text-white mb-6 px-4" style="font-size: clamp(2rem, 6vw, 4rem); font-weight: 900; line-height: 1.2;">
+          Estamos Aquí para{' '}
+          <span class="bg-clip-text text-transparent" style="background: linear-gradient(135deg, #fbbf24 0%, #f97316 50%, #ef4444 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            Ayudarte
+          </span>
+        </h1>
+        
+        <p class="text-white/90 mb-8 max-w-[500px] mx-auto px-4" style="font-size: clamp(1rem, 3vw, 1.25rem); line-height: 1.6; margin: 0 auto 2rem;">
+          Agenda tu servicio de reparación o mantenimiento. Atención rápida en Chiclayo y Lambayeque.
+        </p>
+
+        <div class="flex flex-col px-4" style="gap: clamp(1rem, 2.5vw, 1.5rem); justify-content: center; align-items: center; margin-bottom: 2rem;">
+          <a
+            href="https://wa.me/51955112484?text=Hola,%20necesito%20información"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-success inline-flex items-center justify-center text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl w-full max-w-[400px] mx-auto hover:scale-105 hover:-translate-y-1"
+            style="gap: 0.5rem; font-size: clamp(1rem, 2.5vw, 1.125rem); padding: clamp(1rem, 3vw, 1.25rem) clamp(1.5rem, 4vw, 2.5rem); background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);"
+          >
+            <Icons name="phone" style="width: clamp(20px, 5vw, 24px); height: clamp(20px, 5vw, 24px);" />
+            Contactar por WhatsApp
+            <Icons name="arrowRight" style="width: clamp(16px, 4vw, 20px); height: clamp(16px, 4vw, 20px);" />
+          </a>
+          
+          <a
+            href="tel:+51955112484"
+            class="btn-outline inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold rounded-xl transition-all duration-300 w-full max-w-[400px] mx-auto hover:scale-105 hover:-translate-y-1"
+            style="gap: 0.5rem; font-size: clamp(1rem, 2.5vw, 1.125rem); padding: clamp(1rem, 3vw, 1.25rem) clamp(1.5rem, 4vw, 2.5rem); background: transparent;"
+          >
+            <Icons name="phone" style="width: clamp(20px, 5vw, 24px); height: clamp(20px, 5vw, 24px);" />
+            Llamar Ahora
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Métodos de Contacto Rápido -->
+    <section class="relative overflow-hidden" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); padding: clamp(3rem, 6vw, 6rem) 1rem;">
+      <!-- Efectos de fondo -->
+      <div class="absolute inset-0 z-1">
+        <div class="absolute inset-0 animate-pulse-slow" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 50%, rgba(240, 147, 251, 0.2) 100%);"></div>
+        <div class="absolute top-[10%] right-[10%] rounded-full opacity-20 animate-float" style="width: 200px; height: 200px; background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%); filter: blur(80px);"></div>
+      </div>
+      
+      <div class="relative z-10 max-w-[1200px] mx-auto px-4">
+        <!-- Header -->
+        <div class="text-center mb-16">
+          <div class="inline-flex items-center rounded-full mb-6 border border-white/20" style="gap: 0.75rem; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 1rem; font-size: 1.2rem;">
+            <Icons name="messageCircle" class="text-[#fbbf24]" style="width: 30px; height: 30px;" />
+            <span class="text-white font-semibold">Medios de Contacto</span>
+          </div>
+          
+          <h2 class="text-white mb-6 font-black leading-tight" style="font-size: clamp(2.75rem, 5.5vw, 3.75rem);">
+            Contáctanos por tu Medio Preferido
+          </h2>
+          
+          <p class="text-white/80 max-full mx-auto px-6 min-h-24 md:h-20 lg:h-24 leading-relaxed" style="font-size: clamp(1.1rem, 2.75vw, 1.4rem);">
+            Elige el canal de comunicación que prefieras para una atención inmediata
+          </p>
+        </div>
+        
+        <!-- Grid de Contactos -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <a
+            href="https://wa.me/51955112484?text=Hola,%20necesito%20información"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-center rounded-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 group"
+            style="padding: clamp(1.5rem, 3.5vw, 2rem); background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); border: 1.5px solid rgba(255, 255, 255, 0.25); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);"
+          >
+            <div class="rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform" style="width: clamp(56px, 14vw, 72px); height: clamp(56px, 14vw, 72px); margin: 0 auto; background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);">
+              <Icons name="messageCircle" class="text-white" style="width: clamp(28px, 7vw, 36px); height: clamp(28px, 7vw, 36px);" />
+            </div>
+            <h3 class="text-white font-bold mb-2" style="font-size: clamp(1.15rem, 2.75vw, 1.4rem);">WhatsApp</h3>
+            <p class="text-white/70 mb-3" style="font-size: clamp(0.875rem, 2.25vw, 1rem);">Respuesta inmediata</p>
+            <p class="text-green-400 font-semibold" style="font-size: clamp(1rem, 2.25vw, 1.15rem);">+51 955 112 484</p>
+          </a>
+
+          <a
+            href="tel:+51955112484"
+            class="text-center rounded-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 group"
+            style="padding: clamp(1.5rem, 3.5vw, 2rem); background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); border: 1.5px solid rgba(255, 255, 255, 0.25); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);"
+          >
+            <div class="rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform" style="width: clamp(56px, 14vw, 72px); height: clamp(56px, 14vw, 72px); margin: 0 auto; background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);">
+              <Icons name="phone" class="text-white" style="width: clamp(28px, 7vw, 36px); height: clamp(28px, 7vw, 36px);" />
+            </div>
+            <h3 class="text-white font-bold mb-2" style="font-size: clamp(1.15rem, 2.75vw, 1.4rem);">Teléfono</h3>
+            <p class="text-white/70 mb-3" style="font-size: clamp(0.875rem, 2.25vw, 1rem);">Llamada directa</p>
+            <p class="text-blue-700 font-semibold" style="font-size: clamp(1rem, 2.25vw, 1.15rem);">+51 955 112 484</p>
+          </a>
+
+          <a
+            href="mailto:rymlavadoras@gmail.com"
+            class="text-center rounded-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 group"
+            style="padding: clamp(1.5rem, 3.5vw, 2rem); background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); border: 1.5px solid rgba(255, 255, 255, 0.25); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);"
+          >
+            <div class="rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform" style="width: clamp(56px, 14vw, 72px); height: clamp(56px, 14vw, 72px); margin: 0 auto; background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);">
+              <Icons name="mail" class="text-white" style="width: clamp(28px, 7vw, 36px); height: clamp(28px, 7vw, 36px);" />
+            </div>
+            <h3 class="text-white font-bold mb-2" style="font-size: clamp(1.15rem, 2.75vw, 1.4rem);">Email</h3>
+            <p class="text-white/70 mb-3" style="font-size: clamp(0.875rem, 2.25vw, 1rem);">Envíanos un correo</p>
+            <p class="text-purple-800 font-semibold" style="font-size: clamp(0.875rem, 2.25vw, 1rem);">rymlavadoras@gmail.com</p>
+          </a>
+
+          <div class="text-center rounded-2xl transition-all duration-300" style="padding: clamp(1.5rem, 3.5vw, 2rem); background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); border: 1.5px solid rgba(255, 255, 255, 0.25); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
+            <div class="rounded-xl flex items-center justify-center mb-4 shadow-lg" style="width: clamp(56px, 14vw, 72px); height: clamp(56px, 14vw, 72px); margin: 0 auto; background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);">
+              <Icons name="mapPin" class="text-white" style="width: clamp(28px, 7vw, 36px); height: clamp(28px, 7vw, 36px);" />
+            </div>
+            <h3 class="text-white font-bold mb-2" style="font-size: clamp(1.15rem, 2.75vw, 1.4rem);">Ubicación</h3>
+            <p class="text-white/70 mb-3" style="font-size: clamp(0.875rem, 2.25vw, 1rem);">Nos ubicamos en</p>
+            <p class="text-orange-600 font-semibold" style="font-size: clamp(1rem, 2.25vw, 1.15rem);">Chiclayo, Tuman</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Horario de Atención -->
+    <section class="relative overflow-hidden" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); padding: clamp(3rem, 5vw, 4rem) 1rem;">
+      <!-- Efectos de fondo -->
+      <div class="absolute inset-0 z-1">
+        <div class="absolute inset-0 animate-pulse-slow" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 50%, rgba(240, 147, 251, 0.2) 100%);"></div>
+        <div class="absolute bottom-[10%] left-[10%] rounded-full opacity-20 animate-float" style="width: 200px; height: 200px; background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%); filter: blur(80px); animation-delay: 2s;"></div>
+      </div>
+      
+      <div class="relative z-10" style="width: 100%; max-width: 700px; margin: 0 auto; padding: 0 clamp(1.5rem, 4vw, 2rem);">
+        <!-- Header compacto -->
+        <div class="text-center mb-8">
+          <div class="inline-flex items-center rounded-full mb-4 border border-white/20" style="gap: 0.75rem; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 1rem; font-size: 1.2rem;">
+            <Icons name="clock" class="text-[#fbbf24]" style="width: 30px; height: 30px;" />
+            <span class="text-white font-semibold">Horario</span>
+          </div>
+          
+          <h2 class="text-white mb-3 font-black leading-tight" style="font-size: clamp(2.25rem, 5.5vw, 3.25rem);">
+            Horario de Atención
+          </h2>
+          
+          <p class="text-white/80 mx-auto leading-relaxed" style="font-size: clamp(1rem, 2.75vw, 1.3rem);">
+            Estamos disponibles para atenderte
+          </p>
+        </div>
+        
+        <!-- Card Principal compacta -->
+        <div class="rounded-3xl" style="padding: clamp(1.5rem, 4vw, 2rem); background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); border: 1.5px solid rgba(255, 255, 255, 0.25); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
+          <div class="flex flex-col items-center justify-center gap-4 mb-6">
+            <div class="rounded-xl flex items-center justify-center shadow-lg" style="width: clamp(56px, 12vw, 64px); height: clamp(56px, 12vw, 64px); background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%);">
+              <Icons name="clock" class="text-white" style="width: clamp(28px, 6vw, 32px); height: clamp(28px, 6vw, 32px);" />
+            </div>
+            <div class="text-center">
+              <p class="text-white font-black mb-1" style="font-size: clamp(1.4rem, 3.75vw, 1.9rem);">Lunes a Sábado</p>
+              <p class="text-white/80" style="font-size: clamp(1.1rem, 2.75vw, 1.4rem);">8:00 AM - 6:00 PM</p>
+            </div>
+          </div>
+          
+          <!-- Grid de Features compacto -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <div class="text-center rounded-xl transition-all duration-300 hover:-translate-y-1 hover:scale-105" style="padding: clamp(0.75rem, 2vw, 1rem); background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);">
+              <div class="rounded-lg flex items-center justify-center mb-2 shadow-lg" style="width: clamp(32px, 8vw, 40px); height: clamp(32px, 8vw, 40px); margin: 0 auto; background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                <Icons name="checkCircle" class="text-white" style="width: clamp(16px, 4vw, 20px); height: clamp(16px, 4vw, 20px);" />
+              </div>
+              <p class="text-white font-semibold" style="font-size: clamp(0.875rem, 2.25vw, 1rem);">Atención Inmediata</p>
+            </div>
+            
+            <div class="text-center rounded-xl transition-all duration-300 hover:-translate-y-1 hover:scale-105" style="padding: clamp(0.75rem, 2vw, 1rem); background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);">
+              <div class="rounded-lg flex items-center justify-center mb-2 shadow-lg" style="width: clamp(32px, 8vw, 40px); height: clamp(32px, 8vw, 40px); margin: 0 auto; background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);">
+                <Icons name="shield" class="text-white" style="width: clamp(16px, 4vw, 20px); height: clamp(16px, 4vw, 20px);" />
+              </div>
+              <p class="text-white font-semibold" style="font-size: clamp(0.875rem, 2.25vw, 1rem);">Garantía Incluida</p>
+            </div>
+            
+            <div class="text-center rounded-xl transition-all duration-300 hover:-translate-y-1 hover:scale-105" style="padding: clamp(0.75rem, 2vw, 1rem); background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);">
+              <div class="rounded-lg flex items-center justify-center mb-2 shadow-lg" style="width: clamp(32px, 8vw, 40px); height: clamp(32px, 8vw, 40px); margin: 0 auto; background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%);">
+                <Icons name="zap" class="text-white" style="width: clamp(16px, 4vw, 20px); height: clamp(16px, 4vw, 20px);" />
+              </div>
+              <p class="text-white font-semibold" style="font-size: clamp(0.875rem, 2.25vw, 1rem);">Servicio Rápido</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  
+  <Footer />
+  <WhatsAppButton />
+</MainLayout>
+
+

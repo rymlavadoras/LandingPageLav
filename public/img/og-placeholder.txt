@@ -1,0 +1,20 @@
+INSTRUCCIONES PARA CREAR LA IMAGEN OPEN GRAPH (og.jpg):
+
+Dimensiones recomendadas: 1200x630 píxeles
+
+Contenido sugerido:
+- Fondo: Gradiente morado/azul (similar al sitio)
+- Logo: "R&M Lavadoras"
+- Texto principal: "Reparación de Lavadoras en Chiclayo"
+- Subtexto: "Servicio Técnico Profesional"
+- Imagen: Foto de una lavadora siendo reparada
+- Información de contacto: +51 955112484
+
+Herramientas para crear:
+1. Canva (https://www.canva.com) - Plantilla "Open Graph"
+2. Figma (https://www.figma.com)
+3. Photoshop / GIMP
+
+Una vez creada, guárdala como: public/img/og.jpg
+
+

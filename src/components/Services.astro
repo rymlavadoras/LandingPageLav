@@ -1,0 +1,100 @@
+---
+import Icons from './Icons.astro';
+
+const services = [
+  {
+    title: 'Reparación General',
+    description: 'Reparamos todo tipo de lavadoras de todas las marcas con garantía completa.',
+    features: ['Diagnóstico gratuito', 'Repuestos originales', 'Garantía de 6 meses'],
+    gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    icon: 'wrench'
+  },
+  {
+    title: 'Mantenimiento Preventivo',
+    description: 'Servicio de mantenimiento para prevenir fallas y alargar la vida útil de tu lavadora.',
+    features: ['Limpieza profunda', 'Lubricación', 'Revisión completa'],
+    gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+    icon: 'settings'
+  },
+  {
+    title: 'Garantía Extendida',
+    description: 'Ofrecemos garantías extendidas para tu tranquilidad y seguridad total.',
+    features: ['Garantía de 1 año', 'Servicio post-venta', 'Soporte técnico'],
+    gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
+    icon: 'shield'
+  },
+  {
+    title: 'Servicio Premium',
+    description: 'Servicio VIP con atención personalizada y prioridad en todos los trabajos.',
+    features: ['Atención VIP', 'Prioridad máxima', 'Seguimiento personal'],
+    gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
+    icon: 'star'
+  },
+  {
+    title: 'Reparación Express',
+    description: 'Reparaciones rápidas en el mismo día para problemas urgentes.',
+    features: ['Mismo día', 'Diagnóstico rápido', 'Soluciones inmediatas'],
+    gradient: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+    icon: 'zap'
+  }
+];
+---
+
+<section id="servicios" class="relative overflow-hidden" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); padding: clamp(3rem, 6vw, 6rem) 1rem;">
+  <!-- Efectos de fondo espectaculares -->
+  <div class="absolute inset-0 z-1">
+    <!-- Gradientes animados -->
+    <div class="absolute inset-0 animate-pulse-slow" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 50%, rgba(240, 147, 251, 0.2) 100%);"></div>
+    
+    <!-- Formas geométricas flotantes -->
+    <div class="absolute top-[10%] right-[10%] rounded-full opacity-20 animate-float" style="width: 200px; height: 200px; background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%); filter: blur(80px);"></div>
+    <div class="absolute bottom-[20%] left-[5%] rounded-full opacity-30 animate-float" style="width: 150px; height: 150px; background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%); filter: blur(60px); animation-delay: 2s;"></div>
+  </div>
+
+  <div class="relative z-10 max-w-[1200px] mx-auto px-4">
+    <!-- Header de la sección -->
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center rounded-full mb-8 border border-white/20" style="gap: 0.75rem; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 1rem; font-size: 1.2rem;">
+        <Icons name="wrench" class="text-[#fbbf24]" style="width: 30px; height: 30px;" />
+        <span class="text-white font-semibold">Servicios Profesionales</span>
+      </div>
+      
+      <h2 class="text-white mb-6 font-black leading-tight" style="font-size: clamp(2.5rem, 5vw, 3.5rem);">
+        Nuestros Servicios Especializados
+      </h2>
+      
+      <p class="text-white/80 max-full mx-auto px-6 min-h-24 md:h-20 lg:h-24 leading-relaxed" style="font-size: clamp(1rem, 2.5vw, 1.25rem);">
+        Ofrecemos una amplia gama de servicios especializados para mantener tu lavadora funcionando perfectamente
+      </p>
+    </div>
+
+    <!-- ESPACIO GIGANTE AQUÍ ABAJO (mb-20 = 5rem = 80px en móvil) -->
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      {services.map((service) => (
+        <div class="rounded-3xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 group" style="padding: clamp(1.5rem, 4vw, 1rem); background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); border: 1.5px solid rgba(255, 255, 255, 0.25); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
+          <div class="rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300" style={`width: 80px; height: 80px; background: ${service.gradient}; margin-bottom: 1.5rem;`}>
+            <Icons name={service.icon} class="w-10 h-10 text-white" />
+          </div>
+          
+          <h3 class="text-white" style="font-size: clamp(1.5rem, 3vw, 1.75rem); font-weight: 700; margin-bottom: 1rem;">
+            {service.title}
+          </h3>
+          
+          <p class="text-white/85 leading-relaxed" style="margin-bottom: 1.5rem;">
+            {service.description}
+          </p>
+          
+          <ul style="display: flex; flex-direction: column; gap: 0.75rem;">
+            {service.features.map((feature) => (
+              <li class="flex items-center text-white/80 text-sm" style="gap: 0.5rem;">
+                <Icons name="checkCircle" class="w-5 h-5 text-green-400 shrink-0" />
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

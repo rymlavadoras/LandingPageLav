@@ -1,0 +1,210 @@
+---
+import Icons from './Icons.astro';
+
+const testimonials = [
+  {
+    id: 1,
+    name: 'María González',
+    location: 'Chiclayo, Lambayeque',
+    rating: 5,
+    comment: 'Excelente servicio! Mi lavadora Samsung estaba completamente dañada y en solo 2 horas la dejaron funcionando perfectamente. El técnico fue muy profesional y explicó todo el proceso. Definitivamente los recomiendo.',
+    service: 'Reparación Samsung',
+    time: '2 horas',
+    avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&q=80',
+    gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+  },
+  {
+    id: 2,
+    name: 'Carlos Rodríguez',
+    location: 'Lambayeque',
+    rating: 5,
+    comment: 'Increíble atención al cliente. Llegaron exactamente a la hora acordada, diagnosticaron el problema rápidamente y me dieron un presupuesto transparente. El trabajo quedó perfecto y con garantía.',
+    service: 'Mantenimiento LG',
+    time: '1.5 horas',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80',
+    gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+  },
+  {
+    id: 3,
+    name: 'Ana Martínez',
+    location: 'Pimentel',
+    rating: 5,
+    comment: 'Servicio rápido y eficiente. Mi lavadora se descompuso y en menos de una hora ya tenían un técnico en mi casa. ¡Excelente servicio!',
+    service: 'Emergencia Whirlpool',
+    time: '45 minutos',
+    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80',
+    gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)'
+  },
+  {
+    id: 4,
+    name: 'Roberto Silva',
+    location: 'José Leonardo Ortiz',
+    rating: 5,
+    comment: 'Precios justos y trabajo de calidad. Cambiaron la bomba de agua de mi lavadora Mabe y quedó como nueva. El técnico fue muy cuidadoso y limpio en todo el proceso.',
+    service: 'Cambio de Repuestos Mabe',
+    time: '3 horas',
+    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80',
+    gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
+  }
+];
+---
+
+<section id="testimonios" class="relative overflow-hidden" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); padding: clamp(3rem, 6vw, 6rem) 1rem;">
+  <!-- Efectos de fondo -->
+  <div class="absolute inset-0 z-1">
+    <div class="absolute inset-0 animate-pulse-slow" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 50%, rgba(240, 147, 251, 0.2) 100%);"></div>
+  </div>
+
+  <div class="relative z-10 max-w-[1200px] mx-auto px-4">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center rounded-full mb-6 border border-white/20" style="gap: 0.75rem; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 1rem; font-size: 1.2rem;">
+        <Icons name="quote" class="text-[#fbbf24]" style="width: 30px; height: 30px;" />
+        <span class="text-white font-semibold">Testimonios</span>
+      </div>
+      
+      <h2 class="text-white mb-6 font-black leading-tight" style="font-size: clamp(2.5rem, 5vw, 3.5rem);">
+        Lo que Dicen Nuestros Clientes
+      </h2>
+      
+      <p class="text-white/80 max-full mx-auto px-6 min-h-24 md:h-20 lg:h-24 leading-relaxed" style="font-size: clamp(1rem, 2.5vw, 1.25rem);">
+        Testimonios reales de clientes satisfechos con nuestro servicio
+      </p>
+    </div>
+
+    <!-- Testimonials Carousel -->
+    <div class="relative w-full mx-auto" style="max-width: full;">
+      <div id="testimonials-container" class="overflow-hidden">
+        <div id="testimonials-track" class="flex transition-transform duration-500 ease-out">
+          {testimonials.map((testimonial) => (
+            <div class="min-w-full flex justify-center">
+              <div class="rounded-3xl" style="width: 100%; max-width: 700px; margin: 0 auto; padding: clamp(2rem, 5vw, 3rem); background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); border: 1.5px solid rgba(255, 255, 255, 0.25); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
+                <!-- Quote icon -->
+                <div class="rounded-2xl flex items-center justify-center mb-6 shadow-xl" style={`width: 64px; height: 64px; background: ${testimonial.gradient};`}>
+                  <Icons name="quote" class="w-8 h-8 text-white" />
+                </div>
+
+                <!-- Rating -->
+                <div class="flex items-center gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map(() => (
+                    <Icons name="star" class="w-5 h-5 text-[#fbbf24]" style="fill: #fbbf24;" />
+                  ))}
+                </div>
+
+                <!-- Comment -->
+                <p class="text-white/90 mb-6 leading-relaxed italic" style="font-size: clamp(1rem, 2.5vw, 1.125rem);">
+                  "{testimonial.comment}"
+                </p>
+
+                <!-- Service info -->
+                <div class="flex items-center gap-4 mb-6 pb-6 border-b border-white/20">
+                  <div class="flex items-center gap-2 text-white/70 text-sm">
+                    <Icons name="wrench" class="w-4 h-4" />
+                    <span>{testimonial.service}</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-white/70 text-sm">
+                    <Icons name="clock" class="w-4 h-4" />
+                    <span>{testimonial.time}</span>
+                  </div>
+                </div>
+
+                <!-- Author -->
+                <div class="flex items-center gap-4">
+                  <img 
+                    src={testimonial.avatar} 
+                    alt={testimonial.name}
+                    class="w-16 h-16 rounded-full border-2 border-white/20 object-cover"
+                    loading="lazy"
+                  />
+                  <div>
+                    <h4 class="text-white font-bold text-lg">{testimonial.name}</h4>
+                    <p class="text-white/60 text-sm">{testimonial.location}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Navigation buttons -->
+      <button
+        id="prev-testimonial"
+        class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-14 h-14 glass-effect border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 shadow-lg"
+        aria-label="Anterior"
+      >
+        <Icons name="chevronLeft" class="w-6 h-6" />
+      </button>
+      
+      <button
+        id="next-testimonial"
+        class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-14 h-14 glass-effect border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 shadow-lg"
+        aria-label="Siguiente"
+      >
+        <Icons name="chevronRight" class="w-6 h-6" />
+      </button>
+
+      <!-- Indicators -->
+      <div class="flex justify-center gap-2 mt-8">
+        {testimonials.map((_, index) => (
+          <button
+            class="testimonial-indicator w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-300"
+            data-index={index}
+            aria-label={`Ir a testimonio ${index + 1}`}
+          ></button>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const track = document.getElementById('testimonials-track');
+  const prevBtn = document.getElementById('prev-testimonial');
+  const nextBtn = document.getElementById('next-testimonial');
+  const indicators = document.querySelectorAll('.testimonial-indicator');
+  
+  let currentIndex = 0;
+  const totalTestimonials = indicators.length;
+
+  function updateCarousel() {
+    if (track) {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+    
+    indicators.forEach((indicator, index) => {
+      if (index === currentIndex) {
+        indicator.classList.add('bg-white', 'w-8');
+        indicator.classList.remove('bg-white/30', 'w-2');
+      } else {
+        indicator.classList.remove('bg-white', 'w-8');
+        indicator.classList.add('bg-white/30', 'w-2');
+      }
+    });
+  }
+
+  prevBtn?.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + totalTestimonials) % totalTestimonials;
+    updateCarousel();
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % totalTestimonials;
+    updateCarousel();
+  });
+
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      currentIndex = index;
+      updateCarousel();
+    });
+  });
+
+  // Auto-play
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % totalTestimonials;
+    updateCarousel();
+  }, 5000);
+
+  updateCarousel();
+</script>

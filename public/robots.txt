@@ -1,0 +1,16 @@
+# robots.txt para R&M Lavadoras
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://rymlavadoras.vercel.app/sitemap-index.xml
+
+# Crawl-delay
+Crawl-delay: 0
+
+# Páginas importantes
+Allow: /servicios
+Allow: /reparacion-lavadoras
+Allow: /contacto
+
+

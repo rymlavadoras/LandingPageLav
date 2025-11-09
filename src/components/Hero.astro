@@ -1,0 +1,277 @@
+---
+import Icons from './Icons.astro';
+---
+
+<section id="inicio" class="min-h-screen flex items-center justify-center overflow-hidden relative" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); padding: clamp(5rem, 10vw, 7rem) 1rem 2rem 1rem;">
+  <!-- Efectos de fondo espectaculares -->
+  <div class="absolute inset-0 z-1">
+    <!-- Gradientes animados -->
+    <div class="absolute top-0 left-0 w-full h-full" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 50%, rgba(240, 147, 251, 0.3) 100%); animation: pulse 3s ease-in-out infinite;"></div>
+    
+    <!-- Formas geométricas flotantes - Responsive -->
+    <div class="absolute top-[20%] left-[20%] rounded-full" style="width: clamp(80px, 15vw, 128px); height: clamp(80px, 15vw, 128px); background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%); filter: blur(60px); opacity: 0.3; animation: float 3s ease-in-out infinite;"></div>
+    <div class="absolute bottom-[20%] right-[20%] rounded-full" style="width: clamp(100px, 20vw, 160px); height: clamp(100px, 20vw, 160px); background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%); filter: blur(60px); opacity: 0.3; animation: float 3s ease-in-out infinite; animation-delay: 2s;"></div>
+    <div class="absolute top-1/2 left-1/2 rounded-full" style="width: clamp(120px, 25vw, 240px); height: clamp(120px, 25vw, 240px); background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%); border-radius: 50%; filter: blur(60px); opacity: 0.2; animation: float 3s ease-in-out infinite; animation-delay: 4s; transform: translate(-50%, -50%);"></div>
+  </div>
+
+  <div class="relative z-10 w-full max-w-[1200px] mx-auto">
+    <div class="grid items-center" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(2rem, 4vw, 4rem);">
+      <!-- Content -->
+      <div class="text-center">
+        <h1 class="text-white mb-6 px-4" style="font-size: clamp(2rem, 6vw, 4rem); font-weight: 900; line-height: 1.2;">
+          Reparación y Mantenimiento de{' '}
+          <span class="bg-clip-text text-transparent" style="background: linear-gradient(135deg, #fbbf24 0%, #f97316 50%, #ef4444 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            Lavadoras
+          </span>
+        </h1>
+
+        <p class="text-white/90 mb-8 max-w-[500px] mx-auto px-4" style="font-size: clamp(1rem, 3vw, 1.25rem); line-height: 1.6; margin: 0 auto 2rem;">
+          Servicio técnico especializado con más de 4 años de experiencia. 
+          Reparamos todas las marcas con garantía y precios justos.
+        </p>
+
+        <div class="flex flex-col px-4" style="gap: clamp(1rem, 2.5vw, 1.5rem); justify-content: center; align-items: center; margin-bottom: 3rem;">
+          <a
+            href="https://wa.me/51955112484?text=Hola,%20necesito%20servicio%20de%20reparación%20de%20lavadora.%20¿Podrían%20ayudarme?"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-success inline-flex items-center justify-center text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl w-full max-w-[400px] mx-auto hover:scale-105 hover:-translate-y-1"
+            style="gap: 0.5rem; font-size: clamp(1rem, 2.5vw, 1.125rem); padding: clamp(1rem, 3vw, 1.25rem) clamp(1.5rem, 4vw, 2.5rem); background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);"
+          >
+            <Icons name="phone" style="width: clamp(20px, 5vw, 24px); height: clamp(20px, 5vw, 24px);" />
+            Contactar por WhatsApp
+            <Icons name="arrowRight" style="width: clamp(16px, 4vw, 20px); height: clamp(16px, 4vw, 20px);" />
+          </a>
+          
+          <a
+            href="tel:+51955112484"
+            class="btn-outline inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold rounded-xl transition-all duration-300 w-full max-w-[400px] mx-auto hover:scale-105 hover:-translate-y-1"
+            style="gap: 0.5rem; font-size: clamp(1rem, 2.5vw, 1.125rem); padding: clamp(1rem, 3vw, 1.25rem) clamp(1.5rem, 4vw, 2.5rem); background: transparent;"
+          >
+            <Icons name="phone" style="width: clamp(20px, 5vw, 24px); height: clamp(20px, 5vw, 24px);" />
+            Llamar Ahora
+          </a>
+        </div>
+
+        <!-- Features Cards -->
+        <div class="grid max-w-[600px] mx-auto px-4" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: clamp(1rem, 3vw, 1.5rem); place-items: center;">
+          <!-- Garantía Total -->
+          <div class="text-center rounded-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300" style="padding: clamp(1.25rem, 3.5vw, 1.75rem); background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(15px); border: 1.5px solid rgba(255, 255, 255, 0.25); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
+            <div class="rounded-2xl shadow-[0_10px_25px_rgba(0,0,0,0.2)]" style="width: clamp(48px, 12vw, 64px); height: clamp(48px, 12vw, 64px); background: linear-gradient(135deg, #10b981 0%, #059669 100%); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+              <Icons name="shield" class="text-white" style="width: clamp(28px, 7vw, 36px); height: clamp(28px, 7vw, 36px);" />
+            </div>
+            <h3 class="font-bold text-white mb-2" style="font-size: clamp(1rem, 2.5vw, 1.125rem);">
+              Garantía Total
+            </h3>
+            <p class="text-white/90" style="font-size: clamp(0.875rem, 2vw, 0.875rem);">
+              Trabajo con garantía completa
+            </p>
+          </div>
+
+          <!-- Experto Certificado -->
+          <div class="text-center rounded-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300" style="padding: clamp(1.25rem, 3.5vw, 1.75rem); background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(15px); border: 1.5px solid rgba(255, 255, 255, 0.25); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
+            <div class="rounded-2xl shadow-[0_10px_25px_rgba(0,0,0,0.2)]" style="width: clamp(48px, 12vw, 64px); height: clamp(48px, 12vw, 64px); background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+              <Icons name="star" class="text-white" style="width: clamp(28px, 7vw, 36px); height: clamp(28px, 7vw, 36px);" />
+            </div>
+            <h3 class="font-bold text-white mb-2" style="font-size: clamp(1rem, 2.5vw, 1.125rem);">
+              Experto Certificado
+            </h3>
+            <p class="text-white/90" style="font-size: clamp(0.875rem, 2vw, 0.875rem);">
+              Técnico profesional
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual Section Espectacular - Responsive -->
+      <div class="relative p-4">
+        <!-- Badge arriba del video -->
+        <!-- Versión Desktop -->
+        <div class="hidden md:flex justify-center" style="margin-bottom: 2rem;">
+          <div class="inline-flex items-center rounded-full border border-white/20" style="gap: 0.75rem; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 1rem; font-size: 1.2rem;">
+            <Icons name="zap" class="text-[#fbbf24]" style="width: 30px; height: 30px;" />
+            <span class="text-white font-semibold">Servicio Premium Garantizado</span>
+          </div>
+        </div>
+        
+        <!-- Versión Mobile -->
+        <div class="flex md:hidden justify-center items-center flex-col" style="margin-bottom: 1.5rem; gap: 0.75rem;">
+          <div class="inline-flex items-center rounded-full border border-white/20" style="gap: 0.75rem; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 1rem; font-size: 1.1rem;">
+            <Icons name="play" class="text-[#fbbf24]" style="width: 28px; height: 28px;" />
+            <span class="text-white font-semibold">Mira aquí nuestros resultados</span>
+          </div>
+          <div class="flex items-center justify-center animate-bounce">
+            <svg class="text-white/80" style="width: 32px; height: 32px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+          </div>
+        </div>
+        
+        <!-- Main Video/Image Container -->
+        <div class="relative rounded-[clamp(16px,4vw,24px)] shadow-[0_25px_50px_rgba(0,0,0,0.3)] max-w-full overflow-hidden" style="background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #ef4444 100%); padding: clamp(1rem, 3vw, 2rem);">
+          <div 
+            class="flex items-center justify-center backdrop-blur-[10px] relative overflow-hidden max-w-full rounded-[clamp(12px,3vw,16px)]"
+            style="aspect-ratio: 16/9; background: url('/images/intro.jpg'); background-size: cover; background-position: center;"
+          >
+            <!-- Efectos de fondo del video -->
+            <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(236, 72, 153, 0.2) 50%, rgba(239, 68, 68, 0.2) 100%);"></div>
+            
+            <button
+              id="play-video-btn"
+              class="relative z-10 border-4 border-white rounded-full flex items-center justify-center cursor-pointer hover:scale-[1.2] active:scale-90 transition-transform duration-300"
+              style="width: clamp(64px, 15vw, 96px); height: clamp(64px, 15vw, 96px); background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);"
+              aria-label="Reproducir video"
+            >
+              <Icons name="play" class="text-white" style="width: clamp(24px, 6vw, 32px); height: clamp(24px, 6vw, 32px); margin-left: 4px;" />
+            </button>
+
+            <!-- Badge de video -->
+            <div class="absolute flex items-center" style="position: absolute; top: clamp(12px, 3vw, 20px); left: clamp(12px, 3vw, 20px); background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(10px); padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(0.75rem, 2vw, 1rem); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.2); display: flex; align-items: center; gap: 0.5rem; z-index: 5;">
+              <Icons name="play" style="width: 14px; height: 14px; color: #fbbf24;" />
+              <span style="color: white; font-weight: 600; font-size: clamp(0.75rem, 2vw, 0.875rem);">
+                Video Presentación
+              </span>
+            </div>
+          </div>
+
+          <!-- Floating Elements - Responsive -->
+          <div class="absolute flex items-center justify-center" style="position: absolute; top: -20px; right: -20px; width: clamp(60px, 12vw, 80px); height: clamp(60px, 12vw, 80px); background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); z-index: 5; animation: float 3s ease-in-out infinite;">
+            <Icons name="award" class="text-white" style="width: clamp(24px, 6vw, 32px); height: clamp(24px, 6vw, 32px);" />
+          </div>
+          
+          <div class="absolute flex items-center justify-center" style="position: absolute; bottom: -15px; left: -15px; width: clamp(50px, 10vw, 70px); height: clamp(50px, 10vw, 70px); background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); z-index: 5; animation: float 4s ease-in-out infinite; animation-delay: 1s;">
+            <Icons name="shield" class="text-white" style="width: clamp(20px, 5vw, 28px); height: clamp(20px, 5vw, 28px);" />
+          </div>
+        </div>
+
+        <!-- Stats Cards - Responsive -->
+        <div class="grid text-center" style="grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: clamp(0.75rem, 2vw, 1rem); margin-top: clamp(1rem, 3vw, 1.5rem);">
+          <!-- 500+ Clientes -->
+          <div class="glass-effect rounded-xl hover:-translate-y-1 hover:scale-105 transition-all duration-300" style="padding: clamp(0.75rem, 2vw, 1rem); background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
+            <div class="rounded-lg flex items-center justify-center" style="width: clamp(32px, 8vw, 40px); height: clamp(32px, 8vw, 40px); background: linear-gradient(135deg, #667eea 0%, #f093fb 100%); margin: 0 auto 0.5rem;">
+              <Icons name="star" class="text-white" style="width: clamp(16px, 4vw, 20px); height: clamp(16px, 4vw, 20px);" />
+            </div>
+            <div class="font-black text-white" style="font-size: clamp(1.25rem, 3vw, 1.5rem); margin-bottom: 0.25rem;">
+              500+
+            </div>
+            <div class="text-white/80 font-medium" style="font-size: clamp(0.75rem, 2vw, 0.875rem);">
+              Clientes
+            </div>
+          </div>
+
+          <!-- 98% Satisfacción -->
+          <div class="glass-effect rounded-xl hover:-translate-y-1 hover:scale-105 transition-all duration-300" style="padding: clamp(0.75rem, 2vw, 1rem); background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
+            <div class="rounded-lg flex items-center justify-center" style="width: clamp(32px, 8vw, 40px); height: clamp(32px, 8vw, 40px); background: linear-gradient(135deg, #667eea 0%, #f093fb 100%); margin: 0 auto 0.5rem;">
+              <Icons name="award" class="text-white" style="width: clamp(16px, 4vw, 20px); height: clamp(16px, 4vw, 20px);" />
+            </div>
+            <div class="font-black text-white" style="font-size: clamp(1.25rem, 3vw, 1.5rem); margin-bottom: 0.25rem;">
+              98%
+            </div>
+            <div class="text-white/80 font-medium" style="font-size: clamp(0.75rem, 2vw, 0.875rem);">
+              Satisfacción
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Video -->
+  <div id="video-modal" class="fixed inset-0 z-9998 hidden items-center justify-center" style="background: rgba(0, 0, 0, 0.9); padding: 20px; box-sizing: border-box;">
+    <div class="flex flex-col relative overflow-hidden" style="width: min(90vw, 800px); height: auto; max-height: 80vh; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 20px; padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);">
+      <!-- Botón de cerrar -->
+      <button
+        id="close-video-btn"
+        class="absolute border-2 border-white rounded-full flex items-center justify-center cursor-pointer z-10000 hover:scale-110 hover:rotate-90 active:scale-90 transition-all duration-300"
+        style="top: 10px; right: 10px; width: 40px; height: 40px; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); box-shadow: 0 10px 25px rgba(239, 68, 68, 0.4);"
+        aria-label="Cerrar video"
+      >
+        <Icons name="x" class="text-white" style="{width: 20px; height: 20px;}"/>
+      </button>
+
+      <!-- Contenedor interno -->
+      <div class="flex-1 flex flex-col" style="min-height: 0;">
+        <!-- Header del modal -->
+        <div class="flex items-center border-b border-white/20" style="gap: 0.75rem; margin-bottom: 1rem; padding-bottom: 0.75rem;">
+          <div class="rounded-xl flex items-center justify-center" style="width: clamp(40px, 10vw, 50px); height: clamp(40px, 10vw, 50px); background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%);">
+            <Icons name="play" class="text-white" style="width: clamp(20px, 5vw, 24px); height: clamp(20px, 5vw, 24px);" />
+          </div>
+          <div>
+            <h3 class="text-white font-bold m-0" style="font-size: clamp(1.125rem, 4vw, 1.5rem);">
+              Video de Presentación
+            </h3>
+            <p class="text-white/70 m-0" style="font-size: clamp(0.75rem, 2.5vw, 0.875rem);">
+              Conoce nuestros servicios
+            </p>
+          </div>
+        </div>
+
+        <!-- Video Container -->
+        <div class="relative w-full bg-black rounded-xl overflow-hidden" style="padding-bottom: 56.25%; margin: 1rem 0;">
+          <video
+            id="video-player"
+            src="/videos/prueba.mp4"
+            controls
+            class="absolute inset-0 w-full h-full"
+            style="object-fit: contain;"
+          ></video>
+        </div>
+
+        <!-- Info adicional -->
+        <div class="flex items-center rounded-xl border border-white/10" style="margin-top: 1rem; padding: 0.75rem; background: rgba(255, 255, 255, 0.05); gap: 0.75rem;">
+          <Icons name="zap" class="text-[#fbbf24]" style="width: clamp(18px, 4vw, 20px); height: clamp(18px, 4vw, 20px);" />
+          <p class="text-white/80 m-0" style="font-size: clamp(0.75rem, 2.5vw, 0.875rem);">
+            Presiona <strong>ESC</strong> o haz clic fuera del video para cerrar
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Video modal functionality
+  const playBtn = document.getElementById('play-video-btn');
+  const modal = document.getElementById('video-modal');
+  const closeBtn = document.getElementById('close-video-btn');
+  const videoPlayer = document.getElementById('video-player') as HTMLVideoElement;
+
+  function openModal() {
+    if (modal) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      videoPlayer?.play();
+    }
+  }
+
+  function closeModal() {
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = 'unset';
+      videoPlayer?.pause();
+      if (videoPlayer) videoPlayer.currentTime = 0;
+    }
+  }
+
+  playBtn?.addEventListener('click', openModal);
+  closeBtn?.addEventListener('click', closeModal);
+  
+  // Close on click outside
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Close on ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const isModalVisible = modal?.classList.contains('flex');
+      if (isModalVisible) {
+        closeModal();
+      }
+    }
+  });
+</script>
