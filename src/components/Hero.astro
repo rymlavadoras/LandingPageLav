@@ -107,11 +107,11 @@ import Icons from './Icons.astro';
           </div>
         </div>
         
-        <!-- Main Video/Image Container -->
-        <div class="relative rounded-[clamp(16px,4vw,24px)] shadow-[0_25px_50px_rgba(0,0,0,0.3)] max-w-full overflow-hidden" style="background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #ef4444 100%); padding: clamp(1rem, 3vw, 2rem);">
+        <!-- Main Video/Image Container - Formato Vertical (9:16) -->
+        <div class="relative rounded-[clamp(16px,4vw,24px)] shadow-[0_25px_50px_rgba(0,0,0,0.3)] overflow-hidden" style="background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #ef4444 100%); padding: clamp(1rem, 3vw, 2rem); max-width: min(90vw, 400px); margin: 0 auto;">
           <div 
-            class="flex items-center justify-center backdrop-blur-[10px] relative overflow-hidden max-w-full rounded-[clamp(12px,3vw,16px)]"
-            style="aspect-ratio: 16/9; background: url('/images/intro.jpg'); background-size: cover; background-position: center;"
+            class="flex items-center justify-center backdrop-blur-[10px] relative overflow-hidden w-full rounded-[clamp(12px,3vw,16px)]"
+            style="aspect-ratio: 9/16; background: url('/images/intro.jpg'); background-size: cover; background-position: center;"
           >
             <!-- Efectos de fondo del video -->
             <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(236, 72, 153, 0.2) 50%, rgba(239, 68, 68, 0.2) 100%);"></div>
@@ -176,9 +176,9 @@ import Icons from './Icons.astro';
     </div>
   </div>
 
-  <!-- Modal de Video -->
+  <!-- Modal de Video - Optimizado para formato vertical -->
   <div id="video-modal" class="fixed inset-0 z-9998 hidden items-center justify-center" style="background: rgba(0, 0, 0, 0.9); padding: 20px; box-sizing: border-box;">
-    <div class="flex flex-col relative overflow-hidden" style="width: min(90vw, 800px); height: auto; max-height: 80vh; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 20px; padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);">
+    <div class="flex flex-col relative overflow-hidden" style="width: min(90vw, 480px); height: auto; max-height: 90vh; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 20px; padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);">
       <!-- Botón de cerrar -->
       <button
         id="close-video-btn"
@@ -201,16 +201,16 @@ import Icons from './Icons.astro';
               Video de Presentación
             </h3>
             <p class="text-white/70 m-0" style="font-size: clamp(0.75rem, 2.5vw, 0.875rem);">
-              Conoce nuestros servicios
+              Formato Vertical • Reels/Shorts
             </p>
           </div>
         </div>
 
-        <!-- Video Container -->
-        <div class="relative w-full bg-black rounded-xl overflow-hidden" style="padding-bottom: 56.25%; margin: 1rem 0;">
+        <!-- Video Container - Formato Vertical (9:16) -->
+        <div class="relative w-full bg-black rounded-xl overflow-hidden" style="padding-bottom: 177.77%; margin: 1rem 0;">
           <video
             id="video-player"
-            src="/videos/prueba.mp4"
+            src="/videos/Lav.mp4"
             controls
             class="absolute inset-0 w-full h-full"
             style="object-fit: contain;"
